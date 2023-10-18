@@ -7,11 +7,11 @@ var data = {
             position : [0,0],
             end: "No"},
 
-    "11": {choices : ["00: Texte pas le choix"],
+    "11": {choices : ["00: Death"],
             position : [1,1],
             end: "Death"},
 
-    "12": {choices : ["00: Texte pas le choix"],
+    "12": {choices : ["00: Death"],
             position : [1,1],
             end: "Death"},
 

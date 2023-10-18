@@ -37,7 +37,7 @@ function newEvent(player){
 }
 
 function looser(){
-    newEvent("00");
+    emptyContainer();
 }
 function winner(){
     emptyContainer();
