@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPS Position Checker</title>
+</head>
+<body>
+    <button id="showButton" style="display: none">Show Button</button>
+    <p id="currentPosition"></p>
+
+    <script>
+        // Define the predefined GPS position
+        const predefinedPosition = {
+            latitude: 50.6754027,   // Example latitude
+            longitude: 4.6204131    // Example longitude
+        };
+
+        // Define a margin of error for latitude and longitude (adjust as needed)
+        const marginOfError = 0.00015;
+
+        // Get a reference to the button element and the paragraph for displaying the current position
+        const showButton = document.getElementById('showButton');
+        const currentPositionDisplay = document.getElementById('currentPosition');
+
+        // Check for geolocation support
+        if ('geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                // Get the current GPS position
+                const currentLatitude = position.coords.latitude;
+                const currentLongitude = position.coords.longitude;
+
+                // Display the current position
+                currentPositionDisplay.textContent = `Current Position: Latitude ${currentLatitude}, Longitude ${currentLongitude}`;
+
+                // Check if the current position is within the margin of error of the predefined position
+                if (
+                    Math.abs(currentLatitude - predefinedPosition.latitude) <= marginOfError &&
+                    Math.abs(currentLongitude - predefinedPosition.longitude) <= marginOfError
+                ) {
+                    // Display the button
+                    console.log("Button has been displayed")
+                    showButton.style.display = 'block';
+                }
+            }, function (error) {
+                console.error('Error getting geolocation:', error);
+            });
+        } else {
+            console.error('Geolocation is not supported by your browser.');
+        }
+    </script>
+</body>
+</html>
