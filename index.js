@@ -9,7 +9,7 @@ const backgroundColors = ["#D98880", "#D2B4DE", "#AED6F1", "#F9E79F", "#ABEBC6"]
 const options = {
     enableHighAccuracy: true,
     timeout: 5000000,
-    maximumAge: 1000,
+    maximumAge: 0,
 };
   
 
