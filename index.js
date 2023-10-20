@@ -1,6 +1,6 @@
 
 // Const global var : 
-const meterMargin = 2000000000000;
+const meterMargin = 20;
 const marginOfError = (meterMargin / 40075000) * 360;
 console.log("Margin of error is:", marginOfError);
 const screenHeight  = window.innerHeight;
